@@ -1,0 +1,20 @@
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom background gradient for the hero section */
+.hero-gradient { 
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); 
+}
+
+/* Main accent color (Orange) used for highlights */
+.accent-color { 
+    color: #f6ad55; 
+}
+
+/* Active state for the language switcher buttons */
+.lang-btn.active { 
+    color: #f6ad55; 
+    font-weight: bold; 
+}

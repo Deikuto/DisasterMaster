@@ -1,64 +1,133 @@
-html id="site1"
 <!DOCTYPE html>
-<html>
+<html lang="bg">
 <head>
-  <title>Disaster Master</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 40px;
-    }
-
-    h1 {
-      font-size: 50px;
-    }
-
-    .section {
-      margin: 40px 0;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      background: #ef4444;
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      border-radius: 12px;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #dc2626;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Master | The game that saves lives</title>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+<body class="bg-gray-900 text-white font-sans overflow-x-hidden">
 
-<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-md p-4 border-b border-gray-800">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter accent-color">DISASTER MASTER</h1>
+            <div class="flex items-center space-x-6">
+                <a href="#problem" class="hover:text-orange-400 transition translate-text" data-bg="Проблемът" data-en="The Problem">The Problem</a>
+                <a href="#solution" class="hover:text-orange-400 transition translate-text" data-bg="Решението" data-en="The Solution">The Solution</a>
+                
+                <!-- Language Switcher -->
+                <div class="flex space-x-2 border-l border-gray-600 pl-6">
+                    <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active hover:text-white transition">EN</button>
+                    <span class="text-gray-600">|</span>
+                    <button onclick="setLanguage('bg')" id="btn-bg" class="lang-btn text-gray-400 hover:text-white transition">BG</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <h1>Disaster Master</h1>
-  <p>An educational game about surviving natural disasters.</p>
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center text-center hero-gradient px-4">
+        <div data-aos="fade-up">
+            <h2 class="text-6xl md:text-8xl font-black mb-4 translate-text" data-bg="ДИЗАСТЪР МАСТЪР" data-en="DISASTER MASTER">DISASTER MASTER</h2>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto translate-text" data-bg="Интерактивна 3D симулация за оцеляване при бедствия. Теорията вече не е скучна." data-en="An interactive 3D survival simulation. Theory is no longer boring.">
+                An interactive 3D survival simulation. Theory is no longer boring.[cite: 1, 2]
+            </p>
+            <div class="mt-10">
+                <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-orange-600 hover:scale-105 transform transition inline-block translate-text" data-bg="ИЗТЕГЛИ ОТ ITCH.IO" data-en="DOWNLOAD ON ITCH.IO">DOWNLOAD ON ITCH.IO[cite: 1]</a>
+            </div>
+        </div>
+    </section>
 
-  <div class="section">
-    <h2>🌍 About the Game</h2>
-    <p>Learn how to react during earthquakes, fires, and other disasters through realistic gameplay.</p>
-  </div>
+    <!-- Stats Section -->
+    <section id="problem" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+            <div data-aos="zoom-in">
+                <h3 class="text-5xl font-bold accent-color mb-2">100,000</h3>
+                <p class="text-gray-400 translate-text" data-bg="Смъртни случая годишно от бедствия" data-en="Annual deaths caused by disasters">Annual deaths caused by disasters[cite: 1]</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-5xl font-bold accent-color mb-2">20,000</h3>
+                <p class="text-gray-400 translate-text" data-bg="От тях са деца между 7 и 19 години" data-en="Of those are children aged 7 to 19">Of those are children aged 7 to 19[cite: 1]</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="400">
+                <h3 class="text-5xl font-bold accent-color mb-2">250,000</h3>
+                <p class="text-gray-400 translate-text" data-bg="Претърпяват физически травми" data-en="Suffer severe physical injuries">Suffer severe physical injuries[cite: 1]</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="section">
-    <h2>⚠️ Educational Value</h2>
-    <p>✔ Hide under desks during earthquakes</p>
-    <p>✔ Use correct fire extinguishers</p>
-    <p>✔ Follow safe evacuation routes</p>
-  </div>
+    <!-- Levels/Scenarios -->
+    <section id="solution" class="py-20 container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 translate-text" data-bg="Сценарии за оцеляване" data-en="Survival Scenarios" data-aos="fade-right">Survival Scenarios</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Earthquake -->
+            <div class="bg-gray-800 p-6 rounded-2xl border-b-4 border-orange-500 hover:-translate-y-2 transition duration-300" data-aos="fade-up">
+                <h4 class="text-2xl font-bold mb-4 italic translate-text" data-bg="Земетресение" data-en="Earthquake">Earthquake[cite: 2]</h4>
+                <p class="text-gray-400 mb-4 translate-text" data-bg="Намери укритие под здрав чин в класната стая или напусни магазина безопасно." data-en="Find cover under a sturdy desk in the classroom or safely evacuate the store.">Find cover under a sturdy desk in the classroom or safely evacuate the store.[cite: 2]</p>
+                <span class="text-xs bg-gray-700 px-2 py-1 rounded translate-text" data-bg="2 Нива" data-en="2 Levels">2 Levels[cite: 2]</span>
+            </div>
+            <!-- Fire -->
+            <div class="bg-gray-800 p-6 rounded-2xl border-b-4 border-red-500 hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-2xl font-bold mb-4 italic translate-text" data-bg="Пожар" data-en="Fire">Fire[cite: 2]</h4>
+                <p class="text-gray-400 mb-4 translate-text" data-bg="Овладей пожар в кухнята или се евакуирай от задимен офис, движейки се ниско до земята." data-en="Contain a kitchen fire or evacuate a smoke-filled office by moving low to the ground.">Contain a kitchen fire or evacuate a smoke-filled office by moving low to the ground.[cite: 2]</p>
+                <span class="text-xs bg-gray-700 px-2 py-1 rounded translate-text" data-bg="2 Нива" data-en="2 Levels">2 Levels[cite: 2]</span>
+            </div>
+            <!-- Flood -->
+            <div class="bg-gray-800 p-6 rounded-2xl border-b-4 border-blue-500 hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-2xl font-bold mb-4 italic translate-text" data-bg="Наводнение" data-en="Flood">Flood[cite: 2]</h4>
+                <p class="text-gray-400 mb-4 translate-text" data-bg="Спри течове в склада или избягай от мощна приливна вълна в градска среда." data-en="Stop leaks in a warehouse or escape a massive tidal wave in an urban environment.">Stop leaks in a warehouse or escape a massive tidal wave in an urban environment.[cite: 2]</p>
+                <span class="text-xs bg-gray-700 px-2 py-1 rounded translate-text" data-bg="2 Нива" data-en="2 Levels">2 Levels[cite: 2]</span>
+            </div>
+        </div>
+    </section>
 
-  <div class="section">
-    <h2>🎮 Download</h2>
-    <a class="btn" href="https://deikuto.itch.io/disaster-master">Download Game</a>
-  </div>
+    <!-- Technologies -->
+    <section class="py-20 bg-black/50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-10 translate-text" data-bg="Технологичен стек" data-en="Powered By">Powered By</h2>
+            <div class="flex flex-wrap justify-center gap-10 opacity-70">
+                <span class="text-xl font-mono italic">Unity[cite: 1, 2]</span>
+                <span class="text-xl font-mono italic">C#[cite: 2]</span>
+                <span class="text-xl font-mono italic">Blender[cite: 1, 2]</span>
+                <span class="text-xl font-mono italic">Visual Studio[cite: 1, 2]</span>
+            </div>
+        </div>
+    </section>
 
+    <!-- Team -->
+    <section class="py-20 container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-12 translate-text" data-bg="Отборът" data-en="The Team">The Team[cite: 1]</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-12">
+            <div>
+                <h3 class="text-2xl font-bold italic">Vladimir Toshev[cite: 2]</h3>
+                <p class="text-gray-400 translate-text" data-bg="Визуален дизайн и интерфейс" data-en="Visual Design & Interface">Visual Design & Interface[cite: 2]</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold italic">Deyan Atanasov[cite: 2]</h3>
+                <p class="text-gray-400 translate-text" data-bg="Програмна логика и системи" data-en="Programming Logic & Systems">Programming Logic & Systems[cite: 2]</p>
+            </div>
+        </div>
+        <p class="mt-8 text-orange-400 translate-text" data-bg="ППМГ „Акад. Никола Обрешков“, Бургас" data-en="PMG 'Acad. Nikola Obreshkov', Burgas">PMG 'Acad. Nikola Obreshkov', Burgas[cite: 1, 2]</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-gray-800 text-center text-gray-500">
+        <div class="flex justify-center space-x-6 mb-4 text-white">
+            <a href="https://www.tiktok.com/@_disaster.master_" target="_blank" class="hover:text-orange-500">TikTok[cite: 1]</a>
+            <a href="https://www.instagram.com/disaster._master/" target="_blank" class="hover:text-orange-500">Instagram[cite: 1]</a>
+        </div>
+        <p class="translate-text" data-bg="© 2026 Disaster Master. Всички права запазени." data-en="© 2026 Disaster Master. All rights reserved.">© 2026 Disaster Master. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
-
-
