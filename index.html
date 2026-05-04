@@ -10,230 +10,503 @@
 </head>
 <body>
 
-    <!-- Noise overlay -->
-    <div class="noise"></div>
+<div class="noise"></div>
+<div class="cursor-dot"></div>
 
-    <!-- Navigation -->
-    <nav id="nav">
-        <div class="nav-inner">
-            <a href="#" class="logo">DISASTER<span>MASTER</span></a>
-            <div class="nav-links">
-                <a href="#problem" class="translate-text" data-en="The Problem" data-bg="Проблемът">The Problem</a>
-                <a href="#solution" class="translate-text" data-en="Scenarios" data-bg="Сценарии">Scenarios</a>
-                <a href="#team" class="translate-text" data-en="Team" data-bg="Отбор">Team</a>
-                <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="nav-cta translate-text" data-en="Download" data-bg="Изтегли">Download</a>
+<!-- NAV -->
+<nav id="nav">
+    <div class="nav-inner">
+        <a href="#" class="logo">DISASTER<span>MASTER</span></a>
+        <div class="nav-links">
+            <a href="#problem"   class="t" data-en="Problem"    data-bg="Проблемът">Problem</a>
+            <a href="#solution"  class="t" data-en="Solution"   data-bg="Решението">Solution</a>
+            <a href="#scenarios" class="t" data-en="Scenarios"  data-bg="Сценарии">Scenarios</a>
+            <a href="#how"       class="t" data-en="How It Works" data-bg="Как Работи">How It Works</a>
+            <a href="#future"    class="t" data-en="Future"     data-bg="Бъдеще">Future</a>
+            <a href="#team"      class="t" data-en="Team"       data-bg="Отбор">Team</a>
+            <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="nav-cta t" data-en="Download" data-bg="Изтегли">Download</a>
+        </div>
+        <div class="lang-switcher">
+            <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
+            <span>/</span>
+            <button onclick="setLanguage('bg')" id="btn-bg" class="lang-btn">BG</button>
+        </div>
+        <button class="mobile-menu-btn" id="mobileBtn" aria-label="Menu">☰</button>
+    </div>
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#problem"   class="t" data-en="Problem"      data-bg="Проблемът">Problem</a>
+        <a href="#solution"  class="t" data-en="Solution"     data-bg="Решението">Solution</a>
+        <a href="#scenarios" class="t" data-en="Scenarios"    data-bg="Сценарии">Scenarios</a>
+        <a href="#how"       class="t" data-en="How It Works" data-bg="Как Работи">How It Works</a>
+        <a href="#future"    class="t" data-en="Future"       data-bg="Бъдеще">Future</a>
+        <a href="#team"      class="t" data-en="Team"         data-bg="Отбор">Team</a>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <img src="assets/hero-bg.jpg" alt="" class="hero-bg-img" onerror="this.style.display='none'">
+        <div class="hero-overlay"></div>
+        <div class="scan-lines"></div>
+        <!-- Animated debris particles -->
+        <div class="particles" id="particles"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <span class="dot pulse"></span>
+            <span class="t" data-en="Educational 3D Survival Simulation" data-bg="Образователна 3D Симулация за Оцеляване">Educational 3D Survival Simulation</span>
+        </div>
+        <h1 class="hero-title">
+            <span class="tl">DISASTER</span>
+            <span class="tl accent">MASTER</span>
+        </h1>
+        <p class="hero-tagline t" data-en="The game that saves lives." data-bg="Играта, която спасява животи.">The game that saves lives.</p>
+        <p class="hero-sub t" data-en="Theory is no longer boring. Step into the disaster — and survive it." data-bg="Теорията вече не е скучна. Влез в бедствието — и оцелей.">Theory is no longer boring. Step into the disaster — and survive it.</p>
+        <div class="hero-actions">
+            <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="btn-primary t" data-en="↓ Download Free on Itch.io" data-bg="↓ Изтегли безплатно от Itch.io">↓ Download Free on Itch.io</a>
+            <a href="#problem" class="btn-ghost t" data-en="See the Problem" data-bg="Виж Проблема">See the Problem</a>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span class="t" data-en="scroll" data-bg="скрол">scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- ═══ STATS / PROBLEM ═══ -->
+<section id="problem" class="stats-section">
+    <div class="section-intro">
+        <span class="section-label t" data-en="The Problem" data-bg="Проблемът">The Problem</span>
+        <h2 class="t" data-en="Every year, disasters claim lives that could be saved." data-bg="Всяка година бедствията отнемат животи, които можеха да бъдат спасени.">Every year, disasters claim lives that could be saved.</h2>
+        <p class="t" data-en="The numbers are stark. And the root cause is almost always the same — lack of preparation." data-bg="Числата са ясни. А основната причина е почти винаги едно и също — липса на подготовка.">The numbers are stark. And the root cause is almost always the same — lack of preparation.</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card" data-delay="0">
+            <div class="stat-num">100<span class="k">K</span></div>
+            <div class="stat-bar"></div>
+            <p class="t" data-en="Annual deaths caused by natural disasters worldwide" data-bg="Смъртни случая годишно от природни бедствия по света">Annual deaths caused by natural disasters worldwide</p>
+        </div>
+        <div class="stat-card" data-delay="150">
+            <div class="stat-num">20<span class="k">K</span></div>
+            <div class="stat-bar"></div>
+            <p class="t" data-en="Of those are children and teenagers aged 7–19" data-bg="От тях са деца и тийнейджъри на възраст 7–19">Of those are children and teenagers aged 7–19</p>
+        </div>
+        <div class="stat-card" data-delay="300">
+            <div class="stat-num">250<span class="k">K</span></div>
+            <div class="stat-bar"></div>
+            <p class="t" data-en="Suffer severe physical injuries every year" data-bg="Претърпяват тежки физически травми всяка година">Suffer severe physical injuries every year</p>
+        </div>
+    </div>
+
+    <!-- Problem breakdown from slide 6 -->
+    <div class="problem-grid">
+        <div class="problem-card">
+            <div class="p-icon">≠</div>
+            <h3 class="t" data-en="Theory ≠ Reaction" data-bg="Теория ≠ Реакция">Theory ≠ Reaction</h3>
+            <p class="t" data-en="Reading about disasters doesn't train your instincts. Real survival requires muscle memory, not memorised bullet points." data-bg="Четенето за бедствия не тренира инстинктите ви. Оцеляването изисква мускулна памет, не наизустени точки.">Reading about disasters doesn't train your instincts. Real survival requires muscle memory, not memorised bullet points.</p>
+        </div>
+        <div class="problem-card">
+            <div class="p-icon">✗</div>
+            <h3 class="t" data-en="No Interactivity" data-bg="Няма Интерактивност">No Interactivity</h3>
+            <p class="t" data-en="Traditional safety education is passive. People listen, forget, and freeze when reality hits — because they've never experienced it." data-bg="Традиционното обучение по безопасност е пасивно. Хората слушат, забравят и замръзват, когато реалността удари.">Traditional safety education is passive. People listen, forget, and freeze when reality hits — because they've never experienced it.</p>
+        </div>
+        <div class="problem-card">
+            <div class="p-icon">💤</div>
+            <h3 class="t" data-en="Boring & Ineffective" data-bg="Скучно и Неефективно">Boring & Ineffective</h3>
+            <p class="t" data-en="Dry pamphlets and classroom lectures fail to engage. If the content doesn't stick, it can't save lives." data-bg="Сухите брошури и класните лекции не ангажират. Ако съдържанието не се запомня, то не може да спасява животи.">Dry pamphlets and classroom lectures fail to engage. If the content doesn't stick, it can't save lives.</p>
+        </div>
+        <div class="problem-card">
+            <div class="p-icon">⚠</div>
+            <h3 class="t" data-en="Disasters Are Underestimated" data-bg="Бедствията се Подценяват">Disasters Are Underestimated</h3>
+            <p class="t" data-en="Most people believe disasters won't happen to them — until they do. Familiarity with danger is the first step to surviving it." data-bg="Повечето хора вярват, че бедствия няма да им се случат — докато не се случат. Запознаването с опасността е първата стъпка към оцеляването.">Most people believe disasters won't happen to them — until they do. Familiarity with danger is the first step to surviving it.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ VALIDATION ═══ -->
+<section class="validation-section">
+    <div class="val-inner">
+        <span class="section-label t" data-en="Real-World Validation" data-bg="Реална Валидация">Real-World Validation</span>
+        <h2 class="t" data-en="We asked 50+ students. The results confirmed everything." data-bg="Анкетирахме 50+ ученици. Резултатите потвърдиха всичко.">We asked 50+ students. The results confirmed everything.</h2>
+        <div class="val-stats">
+            <div class="val-stat">
+                <div class="val-num">70<span>%</span></div>
+                <p class="t" data-en="feel underprepared for real disaster situations" data-bg="се чувстват неподготвени за реални бедствени ситуации">feel underprepared for real disaster situations</p>
             </div>
-            <div class="lang-switcher">
-                <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
-                <span>/</span>
-                <button onclick="setLanguage('bg')" id="btn-bg" class="lang-btn">BG</button>
+            <div class="val-divider"></div>
+            <div class="val-stat">
+                <div class="val-num">80<span>%</span></div>
+                <p class="t" data-en="said they would use an educational game to learn survival skills" data-bg="казаха, че биха използвали образователна игра за учене на умения за оцеляване">said they would use an educational game to learn survival skills</p>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <div class="hero-img-container">
-                <!-- Put your best screenshot here: assets/hero-bg.jpg -->
-                <img src="assets/hero-bg.jpg" alt="Disaster Master gameplay" class="hero-bg-img" onerror="this.style.display='none'">
-                <div class="hero-overlay"></div>
-            </div>
-            <div class="scan-lines"></div>
+        <div class="expert-quote">
+            <div class="eq-icon">★</div>
+            <blockquote class="t" data-en="&ldquo;The scenarios and recommended actions in Disaster Master align with real emergency response protocols. This kind of hands-on preparation can genuinely save lives.&rdquo;" data-bg="&ldquo;Сценариите и препоръчаните действия в Дизастър Мастър съответстват на реални протоколи за реакция при извънредни ситуации. Този вид практическа подготовка наистина може да спасява животи.&rdquo;">&ldquo;The scenarios and recommended actions in Disaster Master align with real emergency response protocols. This kind of hands-on preparation can genuinely save lives.&rdquo;</blockquote>
+            <cite>Гл. Инс. Валентин Великов <br><span class="t" data-en="Civil Protection Expert" data-bg="Експерт по Гражданска Защита">Civil Protection Expert</span></cite>
         </div>
+    </div>
+</section>
 
-        <div class="hero-content">
-            <div class="hero-eyebrow">
-                <span class="dot pulse"></span>
-                <span class="translate-text" data-en="Interactive 3D Survival Simulation" data-bg="Интерактивна 3D Симулация за Оцеляване">Interactive 3D Survival Simulation</span>
-            </div>
-            <h1 class="hero-title">
-                <span class="title-line">DISASTER</span>
-                <span class="title-line accent">MASTER</span>
-            </h1>
-            <p class="hero-sub translate-text" data-en="Theory is no longer boring." data-bg="Теорията вече не е скучна.">Theory is no longer boring.</p>
-            <div class="hero-actions">
-                <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="btn-primary translate-text" data-en="↓ Download Free on Itch.io" data-bg="↓ Изтегли безплатно от Itch.io">↓ Download Free on Itch.io</a>
-                <a href="#problem" class="btn-ghost translate-text" data-en="Learn More" data-bg="Научи повече">Learn More</a>
-            </div>
-        </div>
+<!-- ═══ SOLUTION ═══ -->
+<section id="solution" class="solution-section">
+    <div class="solution-intro">
+        <span class="section-label t" data-en="The Solution" data-bg="Решението">The Solution</span>
+        <h2 class="t" data-en="Learn by doing — not by reading." data-bg="Учи чрез действие — не чрез четене.">Learn by doing — not by reading.</h2>
+        <p class="t" data-en="Disaster Master places you inside the emergency. Make split-second decisions. Face real consequences. Build instincts that last." data-bg="Дизастър Мастър те поставя вътре в извънредната ситуация. Взимай решения за секунди. Изправяй се пред реални последствия. Изгради инстинкти, които траят.">Disaster Master places you inside the emergency. Make split-second decisions. Face real consequences. Build instincts that last.</p>
+    </div>
 
-        <div class="hero-scroll-hint">
-            <span class="translate-text" data-en="scroll" data-bg="скролирай">scroll</span>
-            <div class="scroll-line"></div>
+    <div class="pillars-grid">
+        <div class="pillar">
+            <div class="pillar-num">01</div>
+            <h3 class="t" data-en="Educational Focus" data-bg="Образователна Насоченост">Educational Focus</h3>
+            <p class="t" data-en="Safety rules are woven directly into gameplay. Players learn through actions and observe the direct link between choices and consequences — creating lasting knowledge." data-bg="Правилата за безопасност са вплетени директно в играта. Играчите учат чрез действия и наблюдават прякото свързване между изборите и последствията — създавайки трайни знания.">Safety rules are woven directly into gameplay. Players learn through actions and observe the direct link between choices and consequences — creating lasting knowledge.</p>
         </div>
-    </section>
+        <div class="pillar">
+            <div class="pillar-num">02</div>
+            <h3 class="t" data-en="Real-World Preparation" data-bg="Реална Подготовка">Real-World Preparation</h3>
+            <p class="t" data-en="Scenarios recreate conditions close to reality. Players practise specific actions in a safe virtual space — finding shelter, using fire extinguishers, evacuating smartly." data-bg="Сценариите пресъздават условия, близки до реалността. Играчите упражняват конкретни действия в безопасна виртуална среда — намирайки укритие, използвайки пожарогасители, евакуирайки се умело.">Scenarios recreate conditions close to reality. Players practise specific actions in a safe virtual space — finding shelter, using fire extinguishers, evacuating smartly.</p>
+        </div>
+        <div class="pillar">
+            <div class="pillar-num">03</div>
+            <h3 class="t" data-en="Pressure-Tested Decisions" data-bg="Решения под Напрежение">Pressure-Tested Decisions</h3>
+            <p class="t" data-en="Emergencies are sudden, stressful, and fast. Our time-pressured levels train calm reasoning under stress — reducing panic when it matters most." data-bg="Извънредните ситуации са внезапни, стресиращи и бързи. Нашите нива с ограничено време тренират спокойно разсъждение под стрес — намалявайки паниката, когато е най-важно.">Emergencies are sudden, stressful, and fast. Our time-pressured levels train calm reasoning under stress — reducing panic when it matters most.</p>
+        </div>
+        <div class="pillar">
+            <div class="pillar-num">04</div>
+            <h3 class="t" data-en="Instant Feedback Loop" data-bg="Моментална Обратна Връзка">Instant Feedback Loop</h3>
+            <p class="t" data-en="The environment reacts to every choice. Visual warnings, real-time indicators, and post-failure guidance help players understand mistakes and correct them immediately." data-bg="Средата реагира на всеки избор. Визуални предупреждения, индикатори в реално време и напътствия след провал помагат на играчите да разбират грешките си и да ги коригират.">The environment reacts to every choice. Visual warnings, real-time indicators, and post-failure guidance help players understand mistakes and correct them immediately.</p>
+        </div>
+    </div>
 
-    <!-- Stats / Problem -->
-    <section id="problem" class="stats-section">
-        <div class="stats-header">
-            <p class="section-label translate-text" data-en="The Problem" data-bg="Проблемът">The Problem</p>
-            <h2 class="translate-text" data-en="Every year, disasters claim lives that could be saved." data-bg="Всяка година бедствията отнемат животи, които можеха да бъдат спасени.">Every year, disasters claim lives that could be saved.</h2>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-card" style="--delay: 0s">
-                <div class="stat-num">100<span class="stat-k">K</span></div>
-                <div class="stat-bar"></div>
-                <p class="translate-text" data-en="Annual deaths caused by natural disasters worldwide" data-bg="Смъртни случая годишно от природни бедствия по света">Annual deaths caused by natural disasters worldwide</p>
-            </div>
-            <div class="stat-card" style="--delay: 0.15s">
-                <div class="stat-num">20<span class="stat-k">K</span></div>
-                <div class="stat-bar"></div>
-                <p class="translate-text" data-en="Of those are children and teenagers aged 7–19" data-bg="От тях са деца и тийнейджъри на възраст 7–19">Of those are children and teenagers aged 7–19</p>
-            </div>
-            <div class="stat-card" style="--delay: 0.3s">
-                <div class="stat-num">250<span class="stat-k">K</span></div>
-                <div class="stat-bar"></div>
-                <p class="translate-text" data-en="Suffer severe physical injuries each year" data-bg="Претърпяват тежки физически травми всяка година">Suffer severe physical injuries each year</p>
+    <!-- Screenshot strip -->
+    <div class="screenshot-strip">
+        <div class="ss-slide">
+            <img src="assets/screen1.jpg" alt="Earthquake" onerror="this.parentElement.classList.add('empty')">
+            <div class="ss-label">
+                <span class="t" data-en="Earthquake" data-bg="Земетресение">Earthquake</span>
             </div>
         </div>
-        <div class="problem-quote">
-            <blockquote class="translate-text" data-en="&ldquo;Most victims could have survived with basic disaster preparedness knowledge.&rdquo;" data-bg="&ldquo;Повечето жертви щяха да оцелеят с базови знания за готовност при бедствия.&rdquo;">&ldquo;Most victims could have survived with basic disaster preparedness knowledge.&rdquo;</blockquote>
-        </div>
-    </section>
-
-    <!-- Solution intro -->
-    <section class="solution-intro">
-        <div class="solution-intro-inner">
-            <p class="section-label translate-text" data-en="Our Answer" data-bg="Нашият Отговор">Our Answer</p>
-            <h2 class="translate-text" data-en="Learn by doing — not by reading." data-bg="Учи чрез действие — не чрез четене.">Learn by doing — not by reading.</h2>
-            <p class="translate-text" data-en="Disaster Master puts you inside the emergency. Make split-second decisions. Live with the consequences. Remember what works." data-bg="Disaster Master те поставя вътре в извънредната ситуация. Взимай решения за секунди. Живей с последствията. Запомни какво работи.">Disaster Master puts you inside the emergency. Make split-second decisions. Live with the consequences. Remember what works.</p>
-        </div>
-        <!-- Screenshot strip — put gameplay screenshots in assets/ -->
-        <div class="screenshot-strip">
-            <div class="screenshot-slide">
-                <img src="assets/screen1.jpg" alt="Earthquake level" onerror="this.parentElement.classList.add('no-img')">
-                <div class="screenshot-label translate-text" data-en="Earthquake" data-bg="Земетресение">Earthquake</div>
-            </div>
-            <div class="screenshot-slide">
-                <img src="assets/screen2.jpg" alt="Fire level" onerror="this.parentElement.classList.add('no-img')">
-                <div class="screenshot-label translate-text" data-en="Fire" data-bg="Пожар">Fire</div>
-            </div>
-            <div class="screenshot-slide">
-                <img src="assets/screen3.jpg" alt="Flood level" onerror="this.parentElement.classList.add('no-img')">
-                <div class="screenshot-label translate-text" data-en="Flood" data-bg="Наводнение">Flood</div>
+        <div class="ss-slide">
+            <img src="assets/screen2.jpg" alt="Fire" onerror="this.parentElement.classList.add('empty')">
+            <div class="ss-label">
+                <span class="t" data-en="Fire" data-bg="Пожар">Fire</span>
             </div>
         </div>
-    </section>
+        <div class="ss-slide">
+            <img src="assets/screen3.jpg" alt="Flood" onerror="this.parentElement.classList.add('empty')">
+            <div class="ss-label">
+                <span class="t" data-en="Flood" data-bg="Наводнение">Flood</span>
+            </div>
+        </div>
+        <div class="ss-slide">
+            <img src="assets/screen4.jpg" alt="Thunderstorm" onerror="this.parentElement.classList.add('empty')">
+            <div class="ss-label">
+                <span class="t" data-en="Thunderstorm" data-bg="Гръмотевична Буря">Thunderstorm</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Scenarios -->
-    <section id="solution" class="scenarios-section">
-        <p class="section-label translate-text" data-en="Survival Scenarios" data-bg="Сценарии за Оцеляване">Survival Scenarios</p>
-        <h2 class="translate-text" data-en="6 levels. 3 disasters. 0 room for error." data-bg="6 нива. 3 бедствия. 0 право на грешка.">6 levels. 3 disasters. 0 room for error.</h2>
+<!-- ═══ SCENARIOS ═══ -->
+<section id="scenarios" class="scenarios-section">
+    <div class="scenarios-header">
+        <span class="section-label t" data-en="Survival Scenarios" data-bg="Сценарии за Оцеляване">Survival Scenarios</span>
+        <h2 class="t" data-en="7 levels. 4 disasters. 0 room for error." data-bg="7 нива. 4 бедствия. 0 право на грешка.">7 levels. 4 disasters. 0 room for error.</h2>
+        <p class="t" data-en="Every level is grounded in official safety guidelines and validated by civil protection experts." data-bg="Всяко ниво е базирано на официални насоки за безопасност и валидирано от експерти по гражданска защита.">Every level is grounded in official safety guidelines and validated by civil protection experts.</p>
+    </div>
 
-        <div class="scenarios-grid">
+    <div class="scenarios-grid">
 
-            <div class="scenario-card earthquake">
-                <div class="scenario-icon">⚡</div>
-                <div class="scenario-number">01</div>
-                <h3 class="translate-text" data-en="Earthquake" data-bg="Земетресение">Earthquake</h3>
-                <p class="translate-text" data-en="Find cover under a sturdy desk in the classroom or safely evacuate the store before it collapses." data-bg="Намери укритие под здрав чин в класната стая или напусни магазина безопасно, преди да се срути.">Find cover under a sturdy desk in the classroom or safely evacuate the store before it collapses.</p>
-                <div class="scenario-levels">
-                    <span class="translate-text" data-en="Level 1" data-bg="Ниво 1">Level 1</span>
-                    <span class="translate-text" data-en="Level 2" data-bg="Ниво 2">Level 2</span>
+        <!-- EARTHQUAKE -->
+        <div class="sc-card">
+            <div class="sc-header earthquake-h">
+                <span class="sc-emoji">⚡</span>
+                <div>
+                    <div class="sc-tag t" data-en="Disaster 01" data-bg="Бедствие 01">Disaster 01</div>
+                    <h3 class="t" data-en="Earthquake" data-bg="Земетресение">Earthquake</h3>
                 </div>
-                <div class="scenario-accent-bar earthquake-bar"></div>
+            </div>
+            <div class="sc-levels">
+                <div class="sc-level">
+                    <div class="sc-lnum earthquake-lnum">L1</div>
+                    <div>
+                        <strong class="t" data-en="Classroom" data-bg="Класна Стая">Classroom</strong>
+                        <p class="t" data-en="Books fly off shelves. Lamps swing and fall. You must find cover under a sturdy desk before the shaking brings everything down on you — every second of delay raises your injury risk." data-bg="Книги летят от рафтовете. Лампи се люлеят и падат. Трябва да намериш укритие под здрав чин, преди треперенето да събори всичко върху теб.">Books fly off shelves. Lamps swing and fall. You must find cover under a sturdy desk before the shaking brings everything down on you — every second of delay raises your injury risk.</p>
+                    </div>
+                </div>
+                <div class="sc-level">
+                    <div class="sc-lnum earthquake-lnum">L2</div>
+                    <div>
+                        <strong class="t" data-en="Grocery Store" data-bg="Магазин">Grocery Store</strong>
+                        <p class="t" data-en="Shelves topple and products scatter across the floor. Avoid falling objects and reach the exit — getting clear of unstable structures before they collapse." data-bg="Стелажи се преобръщат и продукти се разпръскват. Избягвай падащите предмети и достигни изхода — измъквайки се от нестабилни конструкции, преди да се срутят.">Shelves topple and products scatter across the floor. Avoid falling objects and reach the exit — getting clear of unstable structures before they collapse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIRE -->
+        <div class="sc-card">
+            <div class="sc-header fire-h">
+                <span class="sc-emoji">🔥</span>
+                <div>
+                    <div class="sc-tag t" data-en="Disaster 02" data-bg="Бедствие 02">Disaster 02</div>
+                    <h3 class="t" data-en="Fire" data-bg="Пожар">Fire</h3>
+                </div>
+            </div>
+            <div class="sc-levels">
+                <div class="sc-level">
+                    <div class="sc-lnum fire-lnum">L3</div>
+                    <div>
+                        <strong class="t" data-en="Kitchen" data-bg="Кухня">Kitchen</strong>
+                        <p class="t" data-en="A pan ignites on the hob. Call 112. Turn off the heat. Use a Class F extinguisher — or smother it with a lid to cut oxygen. Open a window. Then evacuate." data-bg="Тиган се запалва на котлона. Обади се на 112. Изключи котлона. Използвай пожарогасител клас F — или покрий съда с похлупак. Отвори прозорец. После евакуирай.">A pan ignites on the hob. Call 112. Turn off the heat. Use a Class F extinguisher — or smother it with a lid to cut oxygen. Open a window. Then evacuate.</p>
+                    </div>
+                </div>
+                <div class="sc-level">
+                    <div class="sc-lnum fire-lnum">L4</div>
+                    <div>
+                        <strong class="t" data-en="Office Building" data-bg="Офис Сграда">Office Building</strong>
+                        <p class="t" data-en="Smoke has filled the entire floor. Visibility is near zero. Move low to the ground, below the smoke — and find the emergency exit before the air runs out." data-bg="Дим е изпълнил целия етаж. Видимостта е почти нулева. Движи се ниско до земята, под дима — и намери аварийния изход, преди въздухът да свърши.">Smoke has filled the entire floor. Visibility is near zero. Move low to the ground, below the smoke — and find the emergency exit before the air runs out.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLOOD -->
+        <div class="sc-card">
+            <div class="sc-header flood-h">
+                <span class="sc-emoji">🌊</span>
+                <div>
+                    <div class="sc-tag t" data-en="Disaster 03" data-bg="Бедствие 03">Disaster 03</div>
+                    <h3 class="t" data-en="Flood" data-bg="Наводнение">Flood</h3>
+                </div>
+            </div>
+            <div class="sc-levels">
+                <div class="sc-level">
+                    <div class="sc-lnum flood-lnum">L5</div>
+                    <div>
+                        <strong class="t" data-en="Warehouse" data-bg="Склад">Warehouse</strong>
+                        <p class="t" data-en="Burst pipes are rapidly flooding the room. Find and shut every damaged valve to stop the rising water — then reach the stairs and escape before you're submerged." data-bg="Спукани тръби бързо наводняват помещението. Намери и затвори всяко повредено кранче — после достигни стълбите и избягай, преди да се потопиш.">Burst pipes are rapidly flooding the room. Find and shut every damaged valve to stop the rising water — then reach the stairs and escape before you're submerged.</p>
+                    </div>
+                </div>
+                <div class="sc-level">
+                    <div class="sc-lnum flood-lnum">L6</div>
+                    <div>
+                        <strong class="t" data-en="Urban Flash Flood" data-bg="Градска Приливна Вълна">Urban Flash Flood</strong>
+                        <p class="t" data-en="A tidal surge is swallowing the streets. Navigate around floating debris, submerged cars, and destroyed infrastructure — reach high ground before the current takes you." data-bg="Прилив поглъща улиците. Навигирай около плаващ отпадък, потопени коли и разрушена инфраструктура — достигни по-висока земя, преди течението да те отнесе.">A tidal surge is swallowing the streets. Navigate around floating debris, submerged cars, and destroyed infrastructure — reach high ground before the current takes you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THUNDERSTORM - NEW -->
+        <div class="sc-card sc-full">
+            <div class="sc-header storm-h">
+                <span class="sc-emoji">⛈</span>
+                <div>
+                    <div class="sc-tag t" data-en="Disaster 04 — Coming Soon" data-bg="Бедствие 04 — Очаквайте">Disaster 04 — Coming Soon</div>
+                    <h3 class="t" data-en="Thunderstorm" data-bg="Гръмотевична Буря">Thunderstorm</h3>
+                </div>
+            </div>
+            <div class="sc-levels">
+                <div class="sc-level">
+                    <div class="sc-lnum storm-lnum">L7</div>
+                    <div>
+                        <strong class="t" data-en="Mountain Forest" data-bg="Планинска Гора">Mountain Forest</strong>
+                        <p class="t" data-en="A dangerous storm rolls in over the high-altitude forest. Lightning, thick fog, and torrential rain slash visibility to near zero. Follow the marked trail without deviating — avoid falling trees and hazardous terrain — and reach the mountain hut before the storm overtakes you." data-bg="Опасна буря се насочва към планинската гора. Светкавици, гъста мъгла и проливен дъжд намаляват видимостта почти до нула. Следвай обозначената пътека без отклонения — избягвай падащи дървета — и достигни хижата, преди бурята да те настигне.">A dangerous storm rolls in over the high-altitude forest. Lightning, thick fog, and torrential rain slash visibility to near zero. Follow the marked trail without deviating — avoid falling trees and hazardous terrain — and reach the mountain hut before the storm overtakes you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="how" class="how-section">
+    <div class="how-inner">
+        <span class="section-label t" data-en="How It Works" data-bg="Как Работи">How It Works</span>
+        <h2 class="t" data-en="A system built for real learning." data-bg="Система, изградена за истинско учене.">A system built for real learning.</h2>
+
+        <div class="modules-grid">
+
+            <div class="module">
+                <div class="module-icon">🎮</div>
+                <h3 class="t" data-en="Gameplay Module" data-bg="Модул на Игровия Процес">Gameplay Module</h3>
+                <p class="t" data-en="Controls the core mechanics and level dynamics — environment behaviour, event sequences, success/failure conditions. Every scenario runs on timed pressure with real consequences." data-bg="Управлява основните механики и динамиката на нивото — поведение на средата, последователности от събития, условия за успех/провал. Всеки сценарий работи с ограничено времево налягане с реални последствия.">Controls the core mechanics and level dynamics — environment behaviour, event sequences, success/failure conditions. Every scenario runs on timed pressure with real consequences.</p>
             </div>
 
-            <div class="scenario-card fire">
-                <div class="scenario-icon">🔥</div>
-                <div class="scenario-number">02</div>
-                <h3 class="translate-text" data-en="Fire" data-bg="Пожар">Fire</h3>
-                <p class="translate-text" data-en="Contain a kitchen fire or evacuate a smoke-filled office by moving low to the ground." data-bg="Овладей пожар в кухнята или се евакуирай от задимен офис, движейки се ниско до земята.">Contain a kitchen fire or evacuate a smoke-filled office by moving low to the ground.</p>
-                <div class="scenario-levels">
-                    <span class="translate-text" data-en="Level 3" data-bg="Ниво 3">Level 3</span>
-                    <span class="translate-text" data-en="Level 4" data-bg="Ниво 4">Level 4</span>
-                </div>
-                <div class="scenario-accent-bar fire-bar"></div>
+            <div class="module">
+                <div class="module-icon">🕹</div>
+                <h3 class="t" data-en="Player Control Module" data-bg="Модул на Управлението">Player Control Module</h3>
+                <p class="t" data-en="First-person control with multiple states: standing, crouching, sprinting, jumping. Each state affects speed and visibility — crouching in smoke is both realistic and mechanically necessary." data-bg="Управление от първо лице с множество състояния: изправено, приклякане, бягане, скачане. Всяко състояние влияе върху скоростта и видимостта — приклякането в дим е едновременно реалистично и механично необходимо.">First-person control with multiple states: standing, crouching, sprinting, jumping. Each state affects speed and visibility — crouching in smoke is both realistic and mechanically necessary.</p>
             </div>
 
-            <div class="scenario-card flood">
-                <div class="scenario-icon">🌊</div>
-                <div class="scenario-number">03</div>
-                <h3 class="translate-text" data-en="Flood" data-bg="Наводнение">Flood</h3>
-                <p class="translate-text" data-en="Stop leaks in a warehouse or escape a massive tidal wave surging through an urban environment." data-bg="Спри течове в склада или избягай от мощна приливна вълна, преминаваща през градска среда.">Stop leaks in a warehouse or escape a massive tidal wave surging through an urban environment.</p>
-                <div class="scenario-levels">
-                    <span class="translate-text" data-en="Level 5" data-bg="Ниво 5">Level 5</span>
-                    <span class="translate-text" data-en="Level 6" data-bg="Ниво 6">Level 6</span>
-                </div>
-                <div class="scenario-accent-bar flood-bar"></div>
+            <div class="module">
+                <div class="module-icon">📚</div>
+                <h3 class="t" data-en="Educational Content Module" data-bg="Модул на Образователното Съдържание">Educational Content Module</h3>
+                <p class="t" data-en="Delivers real safety guidance at critical moments. On failure, targeted tips explain exactly what went wrong. An Info section links to authoritative external resources so players can go deeper." data-bg="Доставя реални насоки за безопасност в критични моменти. При провал, целенасочени съвети обясняват точно какво е сгрешено. Раздел „Информация" свързва към авторитетни външни ресурси.">Delivers real safety guidance at critical moments. On failure, targeted tips explain exactly what went wrong. An Info section links to authoritative external resources so players can go deeper.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-icon">🖥</div>
+                <h3 class="t" data-en="UI Module" data-bg="Модул на Потребителския Интерфейс">UI Module</h3>
+                <p class="t" data-en="Real-time task updates, countdown timers, danger warnings, and audio-visual feedback all synchronised. The interface surfaces danger cues without breaking immersion." data-bg="Актуализации на задачи в реално време, таймери за обратно броене, предупреждения за опасност и аудио-визуална обратна връзка, всички синхронизирани. Интерфейсът показва сигнали за опасност без да нарушава потапянето.">Real-time task updates, countdown timers, danger warnings, and audio-visual feedback all synchronised. The interface surfaces danger cues without breaking immersion.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-icon">🌍</div>
+                <h3 class="t" data-en="Localisation Module" data-bg="Модул на Локализацията">Localisation Module</h3>
+                <p class="t" data-en="Full Bulgarian and English support, built modular — new languages can be added without touching the codebase. Designed for international educational deployment." data-bg="Пълна поддръжка на български и английски, изградена по модулен принцип — нови езици могат да се добавят без промяна на кода. Проектиран за международно образователно разгръщане.">Full Bulgarian and English support, built modular — new languages can be added without touching the codebase. Designed for international educational deployment.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-icon">⚙</div>
+                <h3 class="t" data-en="Modular Architecture" data-bg="Модулна Архитектура">Modular Architecture</h3>
+                <p class="t" data-en="Every system is independent. New disasters, levels, and mechanics can be added without rebuilding the foundation — the game is designed to grow." data-bg="Всяка система е независима. Нови бедствия, нива и механики могат да се добавят без преизграждане на основата — играта е проектирана да расте.">Every system is independent. New disasters, levels, and mechanics can be added without rebuilding the foundation — the game is designed to grow.</p>
             </div>
 
         </div>
-    </section>
 
-    <!-- Tech Stack -->
-    <section class="tech-section">
-        <p class="section-label translate-text" data-en="Built With" data-bg="Създадено с">Built With</p>
-        <div class="tech-row">
-            <div class="tech-item">
-                <span class="tech-name">Unity</span>
-                <span class="tech-desc translate-text" data-en="Game Engine" data-bg="Игрови Двигател">Game Engine</span>
-            </div>
-            <div class="tech-divider"></div>
-            <div class="tech-item">
-                <span class="tech-name">C#</span>
-                <span class="tech-desc translate-text" data-en="Programming" data-bg="Програмиране">Programming</span>
-            </div>
-            <div class="tech-divider"></div>
-            <div class="tech-item">
-                <span class="tech-name">Blender</span>
-                <span class="tech-desc translate-text" data-en="3D Modelling" data-bg="3D Моделиране">3D Modelling</span>
-            </div>
-            <div class="tech-divider"></div>
-            <div class="tech-item">
-                <span class="tech-name">Visual Studio</span>
-                <span class="tech-desc translate-text" data-en="IDE" data-bg="Среда за разработка">IDE</span>
+        <!-- Controls explainer -->
+        <div class="controls-box">
+            <h3 class="t" data-en="Player Controls" data-bg="Управление на Играча">Player Controls</h3>
+            <div class="controls-grid">
+                <div class="ctrl"><kbd>W A S D</kbd><span class="t" data-en="Move" data-bg="Движение">Move</span></div>
+                <div class="ctrl"><kbd>Mouse</kbd><span class="t" data-en="Look around" data-bg="Гледай наоколо">Look around</span></div>
+                <div class="ctrl"><kbd>Shift</kbd><span class="t" data-en="Sprint" data-bg="Бягане">Sprint</span></div>
+                <div class="ctrl"><kbd>Ctrl</kbd><span class="t" data-en="Crouch (smoke / low spaces)" data-bg="Приклякане (дим / ниски пространства)">Crouch (smoke / low spaces)</span></div>
+                <div class="ctrl"><kbd>Space</kbd><span class="t" data-en="Jump" data-bg="Скок">Jump</span></div>
+                <div class="ctrl"><kbd>E</kbd><span class="t" data-en="Interact with objects" data-bg="Взаимодействие с обекти">Interact with objects</span></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Team -->
-    <section id="team" class="team-section">
-        <p class="section-label translate-text" data-en="The Team" data-bg="Отборът">The Team</p>
-        <h2 class="translate-text" data-en="Two students. One mission." data-bg="Двама ученика. Една мисия.">Two students. One mission.</h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <!-- Put a photo here: assets/team-vlad.jpg -->
-                <div class="team-photo">
-                    <img src="assets/team-vlad.jpg" alt="Vladimir Toshev" onerror="this.parentElement.classList.add('no-photo')">
-                    <div class="team-photo-placeholder">VT</div>
-                </div>
-                <h3>Vladimir Toshev</h3>
-                <p class="translate-text" data-en="Visual Design & Interface" data-bg="Визуален Дизайн и Интерфейс">Visual Design & Interface</p>
+<!-- ═══ TECH STACK ═══ -->
+<section class="tech-section">
+    <span class="section-label t" data-en="Powered By" data-bg="Технологичен Стек">Powered By</span>
+    <div class="tech-row">
+        <div class="tech-item">
+            <div class="tech-name">Unity</div>
+            <div class="tech-desc t" data-en="Game Engine" data-bg="Игрови Двигател">Game Engine</div>
+        </div>
+        <div class="tech-div"></div>
+        <div class="tech-item">
+            <div class="tech-name">C#</div>
+            <div class="tech-desc t" data-en="All game logic" data-bg="Цялата програмна логика">All game logic</div>
+        </div>
+        <div class="tech-div"></div>
+        <div class="tech-item">
+            <div class="tech-name">Blender</div>
+            <div class="tech-desc t" data-en="3D Models & Animation" data-bg="3D Модели и Анимация">3D Models & Animation</div>
+        </div>
+        <div class="tech-div"></div>
+        <div class="tech-item">
+            <div class="tech-name">Visual Studio</div>
+            <div class="tech-desc t" data-en="IDE & Debugging" data-bg="Среда за разработка и отстраняване на грешки">IDE & Debugging</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FUTURE PLANS ═══ -->
+<section id="future" class="future-section">
+    <div class="future-inner">
+        <span class="section-label t" data-en="What's Next" data-bg="Бъдещи Планове">What's Next</span>
+        <h2 class="t" data-en="The game is just getting started." data-bg="Играта тъкмо започва.">The game is just getting started.</h2>
+        <p class="t" data-en="Disaster Master is built on a modular foundation — everything is designed to grow. Here's the roadmap:" data-bg="Дизастър Мастър е изграден на модулна основа — всичко е проектирано да расте. Ето пътната карта:">Disaster Master is built on a modular foundation — everything is designed to grow. Here's the roadmap:</p>
+
+        <div class="future-grid">
+            <div class="future-card">
+                <div class="future-icon">🌪</div>
+                <h3 class="t" data-en="More Disasters" data-bg="Повече Бедствия">More Disasters</h3>
+                <p class="t" data-en="Tornadoes, industrial accidents, chemical spills — new disaster categories with unique mechanics and safety lessons." data-bg="Торнадо, промишлени аварии, химически разливи — нови категории бедствия с уникални механики и уроци за безопасност.">Tornadoes, industrial accidents, chemical spills — new disaster categories with unique mechanics and safety lessons.</p>
             </div>
-            <div class="team-card">
-                <!-- Put a photo here: assets/team-deyan.jpg -->
-                <div class="team-photo">
-                    <img src="assets/team-deyan.jpg" alt="Deyan Atanasov" onerror="this.parentElement.classList.add('no-photo')">
-                    <div class="team-photo-placeholder">DA</div>
-                </div>
-                <h3>Deyan Atanasov</h3>
-                <p class="translate-text" data-en="Programming Logic & Systems" data-bg="Програмна Логика и Системи">Programming Logic & Systems</p>
+            <div class="future-card">
+                <div class="future-icon">🗺</div>
+                <h3 class="t" data-en="More Levels & Locations" data-bg="Повече Нива и Локации">More Levels & Locations</h3>
+                <p class="t" data-en="Hospitals, schools, shopping centres, public transport — expanding the range of environments players must navigate in a crisis." data-bg="Болници, училища, молове, обществен транспорт — разширяване на средите, в които играчите трябва да се ориентират при криза.">Hospitals, schools, shopping centres, public transport — expanding the range of environments players must navigate in a crisis.</p>
+            </div>
+            <div class="future-card">
+                <div class="future-icon">📱</div>
+                <h3 class="t" data-en="Social Media Reach" data-bg="Маркетинг в Социалните Мрежи">Social Media Reach</h3>
+                <p class="t" data-en="Growing the TikTok and Instagram presence to reach more young people with the message that preparedness saves lives." data-bg="Разрастване на присъствието в TikTok и Instagram, за да достигне до повече млади хора с посланието, че подготовката спасява животи.">Growing the TikTok and Instagram presence to reach more young people with the message that preparedness saves lives.</p>
+            </div>
+            <div class="future-card">
+                <div class="future-icon">🏫</div>
+                <h3 class="t" data-en="In Schools" data-bg="В Училищата">In Schools</h3>
+                <p class="t" data-en="Partnering with educational institutions to integrate Disaster Master into official disaster preparedness curricula across Bulgaria." data-bg="Партньорство с образователни институции за интегриране на Дизастър Мастър в официалните учебни програми за готовност при бедствия в България.">Partnering with educational institutions to integrate Disaster Master into official disaster preparedness curricula across Bulgaria.</p>
             </div>
         </div>
-        <p class="team-school">PMG "Acad. Nikola Obreshkov" — Burgas</p>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="cta-inner">
-            <h2 class="translate-text" data-en="Ready to survive?" data-bg="Готов ли си да оцелееш?">Ready to survive?</h2>
-            <p class="translate-text" data-en="Free to download. Runs on Windows. No installation required." data-bg="Безплатно за изтегляне. Работи на Windows. Не изисква инсталация.">Free to download. Runs on Windows. No installation required.</p>
-            <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="btn-primary large translate-text" data-en="Download on Itch.io →" data-bg="Изтегли от Itch.io →">Download on Itch.io →</a>
-            <div class="social-links">
-                <a href="https://www.tiktok.com/@_disaster.master_" target="_blank">TikTok</a>
-                <span>·</span>
-                <a href="https://www.instagram.com/disaster._master/" target="_blank">Instagram</a>
+<!-- ═══ TEAM ═══ -->
+<section id="team" class="team-section">
+    <span class="section-label t" data-en="The Team" data-bg="Отборът">The Team</span>
+    <h2 class="t" data-en="Two students. One mission." data-bg="Двама ученика. Една мисия.">Two students. One mission.</h2>
+    <p class="team-intro t" data-en="Built from scratch by two 10th-grade students who believed that education doesn't have to be boring — and that a game could genuinely save lives." data-bg="Изграден от нулата от двама ученици от 10-ти клас, които вярваха, че образованието не трябва да е скучно — и че една игра наистина може да спасява животи.">Built from scratch by two 10th-grade students who believed that education doesn't have to be boring — and that a game could genuinely save lives.</p>
+
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="team-photo">
+                <img src="assets/team-vlad.jpg" alt="Vladimir Toshev" onerror="this.parentElement.classList.add('no-photo')">
+                <div class="team-initials">VT</div>
             </div>
+            <h3>Vladimir Toshev</h3>
+            <p class="team-role t" data-en="Visual Design & Interface · UI/UX · Module Integration · Localisation" data-bg="Визуален Дизайн и Интерфейс · UI/UX · Интеграция на Модули · Локализация">Visual Design & Interface · UI/UX · Module Integration · Localisation</p>
         </div>
-    </section>
+        <div class="team-card">
+            <div class="team-photo">
+                <img src="assets/team-deyan.jpg" alt="Deyan Atanasov" onerror="this.parentElement.classList.add('no-photo')">
+                <div class="team-initials">DA</div>
+            </div>
+            <h3>Deyan Atanasov</h3>
+            <p class="team-role t" data-en="Programming Logic & Systems · Player Control · Disaster Mechanics · Environment" data-bg="Програмна Логика и Системи · Управление на Играча · Механики на Бедствия · Среда">Programming Logic & Systems · Player Control · Disaster Mechanics · Environment</p>
+        </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Disaster Master. <span class="translate-text" data-en="All rights reserved." data-bg="Всички права запазени.">All rights reserved.</span></p>
-    </footer>
+    <div class="team-advisors">
+        <p class="section-label t" data-en="Supervised By" data-bg="Ръководители">Supervised By</p>
+        <div class="advisors-row">
+            <span>Весела Стаматова Вангелова</span>
+            <span class="adv-sep">·</span>
+            <span>Нина Пейчева Илиева</span>
+        </div>
+        <p class="team-school">ППМГ "Акад. Никола Обрешков" — Бургас · <span class="t" data-en="Class 10Д" data-bg="10Д клас">Class 10Д</span></p>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <h2 class="t" data-en="Ready to survive?" data-bg="Готов ли си да оцелееш?">Ready to survive?</h2>
+        <p class="t" data-en="Free to download. Runs on Windows. No installation required. Just unzip and play." data-bg="Безплатно за изтегляне. Работи на Windows. Не изисква инсталация. Просто разархивирай и играй.">Free to download. Runs on Windows. No installation required. Just unzip and play.</p>
+        <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="btn-primary large t" data-en="Download on Itch.io →" data-bg="Изтегли от Itch.io →">Download on Itch.io →</a>
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@_disaster.master_" target="_blank">TikTok</a>
+            <span>·</span>
+            <a href="https://www.instagram.com/disaster._master/" target="_blank">Instagram</a>
+        </div>
+        <p class="cta-note t" data-en="Free forever. Built to protect, not to profit." data-bg="Безплатно завинаги. Изградено за защита, не за печалба.">Free forever. Built to protect, not to profit.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">DISASTER<span>MASTER</span></div>
+        <div class="footer-links">
+            <a href="https://deikuto.itch.io/disastermaster" target="_blank">Itch.io</a>
+            <a href="https://www.tiktok.com/@_disaster.master_" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/disaster._master/" target="_blank">Instagram</a>
+        </div>
+        <p>© 2026 Disaster Master · <span class="t" data-en="All rights reserved." data-bg="Всички права запазени.">All rights reserved.</span></p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
