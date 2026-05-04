@@ -1,33 +1,67 @@
-// Initialize Scroll Animations (AOS)
-document.addEventListener("DOMContentLoaded", function() {
-    AOS.init({ 
-        duration: 1000, 
-        once: true // Animations happen only once when scrolling down
-    });
-});
+/* ===========================
+   DISASTER MASTER — script.js
+   =========================== */
 
-// Language Switcher Logic
-function setLanguage(lang) {
-    // 1. Update active button styling for English
-    const btnEn = document.getElementById('btn-en');
-    btnEn.classList.toggle('active', lang === 'en');
-    btnEn.classList.toggle('text-gray-400', lang !== 'en');
-    
-    // 2. Update active button styling for Bulgarian
-    const btnBg = document.getElementById('btn-bg');
-    btnBg.classList.toggle('active', lang === 'bg');
-    btnBg.classList.toggle('text-gray-400', lang !== 'bg');
+// ── Scroll-aware nav ──────────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
 
-    // 3. Swap text content based on the data attributes in HTML
-    const elements = document.querySelectorAll('.translate-text');
-    elements.forEach(el => {
-        if (lang === 'bg') {
-            el.textContent = el.getAttribute('data-bg');
-        } else {
-            el.textContent = el.getAttribute('data-en');
+
+// ── Intersection Observer for stat cards ─────────────────────
+// Re-trigger count animation when the stats section enters view
+const statCards = document.querySelectorAll('.stat-card');
+const observer  = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
         }
     });
+}, { threshold: 0.2 });
 
-    // 4. Update the HTML lang attribute for Search Engine Optimization (SEO)
+statCards.forEach(card => {
+    card.style.animationPlayState = 'paused';
+    observer.observe(card);
+});
+
+
+// ── Language switcher ─────────────────────────────────────────
+function setLanguage(lang) {
+    // Update button styling
+    ['en', 'bg'].forEach(l => {
+        const btn = document.getElementById('btn-' + l);
+        btn.classList.toggle('active', l === lang);
+    });
+
+    // Swap all translatable text
+    document.querySelectorAll('.translate-text').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) el.textContent = text;
+    });
+
+    // Update lang attribute for SEO / screen readers
     document.documentElement.lang = lang;
+
+    // Persist preference
+    localStorage.setItem('dm-lang', lang);
 }
+
+// Apply saved or browser language on load
+(function () {
+    const saved    = localStorage.getItem('dm-lang');
+    const browser  = navigator.language.startsWith('bg') ? 'bg' : 'en';
+    setLanguage(saved || browser);
+})();
+
+
+// ── Smooth scroll for anchor links ───────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+    });
+});
