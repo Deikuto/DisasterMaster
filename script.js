@@ -1,14 +1,50 @@
 /* ═══════════════════════════════════════
-   DISASTER MASTER — script.js (full)
+   DISASTER MASTER — script.js
    ═══════════════════════════════════════ */
 
-// ── Custom cursor ──────────────────────────────────────────────
-const cursor = document.querySelector('.cursor-dot');
+// ── AAA Cursor Glow Tracking (Smooth interpolation loop) ──
+const glow = document.querySelector('.cursor-glow');
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let glowX = mouseX;
+let glowY = mouseY;
+
 document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 }, { passive: true });
 
+function updateCursorGlow() {
+    glowX += (mouseX - glowX) * 0.12; 
+    glowY += (mouseY - glowY) * 0.12;
+    
+    if(glow) {
+        glow.style.transform = `translate3d(calc(${glowX}px - 50%), calc(${glowY}px - 50%), 0)`;
+    }
+    requestAnimationFrame(updateCursorGlow);
+}
+updateCursorGlow();
+
+// ── AAA Card Hover Lighting Effects ───────────────────────────
+document.querySelectorAll('.aaa-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    }, { passive: true });
+});
+
+// ── Subtle Hero Parallax Key Art ─────────────────────────────
+const heroBg = document.getElementById('parallax-bg');
+document.addEventListener('mousemove', e => {
+    if(!heroBg) return;
+    const x = (e.clientX / window.innerWidth - 0.5) * 20; 
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    heroBg.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+}, { passive: true });
 
 // ── Nav scroll state ──────────────────────────────────────────
 const nav = document.getElementById('nav');
@@ -16,18 +52,15 @@ window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
-
 // ── Mobile menu ───────────────────────────────────────────────
 const mobileBtn = document.getElementById('mobileBtn');
 const mobileNav = document.getElementById('mobileNav');
 mobileBtn.addEventListener('click', () => {
     mobileNav.classList.toggle('open');
 });
-// Close mobile nav on link click
 mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => mobileNav.classList.remove('open'));
 });
-
 
 // ── Particles ─────────────────────────────────────────────────
 (function buildParticles() {
@@ -46,7 +79,6 @@ mobileNav.querySelectorAll('a').forEach(a => {
         container.appendChild(p);
     }
 })();
-
 
 // ── Stat card scroll reveal ───────────────────────────────────
 (function initStatObserver() {
@@ -67,7 +99,6 @@ mobileNav.querySelectorAll('a').forEach(a => {
     cards.forEach(c => obs.observe(c));
 })();
 
-
 // ── Smooth scroll for nav anchors ─────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -79,31 +110,26 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-
 // ── Language switcher ─────────────────────────────────────────
 function setLanguage(lang) {
-    // Buttons
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-bg').classList.toggle('active', lang === 'bg');
 
-    // All translatable elements — class "t" or "translate-text"
     document.querySelectorAll('.t, .translate-text').forEach(el => {
         const text = el.getAttribute('data-' + lang);
-        if (text !== null) el.innerHTML = text; // innerHTML to preserve &ldquo; etc.
+        if (text !== null) el.innerHTML = text;
     });
 
     document.documentElement.lang = lang;
     try { localStorage.setItem('dm-lang', lang); } catch(e){}
 }
 
-// Init language
 (function initLang() {
     let saved;
     try { saved = localStorage.getItem('dm-lang'); } catch(e) {}
     const browser = navigator.language && navigator.language.startsWith('bg') ? 'bg' : 'en';
     setLanguage(saved || browser);
 })();
-
 
 // ── Active nav link highlight on scroll ───────────────────────
 (function initScrollSpy() {
