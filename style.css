@@ -67,6 +67,13 @@ body {
     margin-bottom: .9rem;
 }
 
+/* NO-WRAP UTILITY (Only applies on desktop to prevent breaking mobile layouts) */
+@media (min-width: 820px) {
+    .no-wrap {
+        white-space: nowrap;
+    }
+}
+
 /* ── BUTTONS ── */
 .btn-primary {
     display: inline-block;
@@ -369,7 +376,7 @@ body {
     color: rgba(240,237,230,.5);
     font-style: italic;
     margin-bottom: 2.5rem;
-    max-width: 500px;
+    max-width: 700px; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -402,7 +409,9 @@ body {
    STATS / PROBLEM
    ═══════════════ */
 .stats-section { padding: 7rem 2rem; background: var(--dark-2); border-top: 1px solid rgba(255,255,255,.04); }
-.section-intro { max-width: 700px; margin: 0 auto 4.5rem; text-align: center; }
+
+/* WIDENED TO ALLOW NO-WRAP TO FIT */
+.section-intro { max-width: 1000px; margin: 0 auto 4.5rem; text-align: center; }
 .section-intro h2 { font-family: var(--font-d); font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.05; letter-spacing: .02em; margin-bottom: 1rem; }
 .section-intro p { color: var(--gray-2); font-size: 1.05rem; }
 
@@ -423,7 +432,9 @@ body {
    VALIDATION (ANIMATED DONUT CHARTS)
    ═══════════════ */
 .validation-section { padding: 6rem 2rem; border-top: 1px solid rgba(255,255,255,.04); border-bottom: 1px solid rgba(255,255,255,.04); }
-.val-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+
+/* WIDENED TO ALLOW BR TO FIT PROPERLY */
+.val-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
 .val-inner h2 { font-family: var(--font-d); font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: .02em; margin-bottom: 4rem; }
 .val-stats { display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-bottom: 4.5rem; }
 
@@ -446,7 +457,7 @@ body {
    SOLUTION
    ═══════════════ */
 .solution-section { padding: 7rem 2rem; max-width: 1280px; margin: 0 auto; }
-.solution-intro { max-width: 720px; margin: 0 auto 5rem; text-align: center; }
+.solution-intro { max-width: 900px; margin: 0 auto 5rem; text-align: center; }
 .solution-intro h2 { font-family: var(--font-d); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; letter-spacing: .02em; margin-bottom: 1rem; }
 .solution-intro p { color: var(--gray-2); font-size: 1.05rem; }
 
@@ -466,7 +477,7 @@ body {
    SCENARIOS
    ═══════════════ */
 .scenarios-section { padding: 7rem 2rem; background: var(--dark-2); border-top: 1px solid rgba(255,255,255,.04); }
-.scenarios-header { max-width: 700px; margin: 0 auto 4.5rem; text-align: center; }
+.scenarios-header { max-width: 850px; margin: 0 auto 4.5rem; text-align: center; }
 .scenarios-header h2 { font-family: var(--font-d); font-size: clamp(2.2rem, 4vw, 3.4rem); letter-spacing: .02em; margin-bottom: 1rem; }
 .scenarios-header p { color: var(--gray-2); font-size: 1.05rem; }
 
@@ -496,7 +507,7 @@ body {
 .sc-level p { font-size: .95rem; color: var(--gray-2); line-height: 1.6; }
 
 /* ═══════════════
-   HOW IT WORKS (NO SCREENSHOTS)
+   HOW IT WORKS
    ═══════════════ */
 .how-section { padding: 7rem 2rem; border-top: 1px solid rgba(255,255,255,.04); }
 .how-inner { max-width: 1200px; margin: 0 auto; }
@@ -530,7 +541,6 @@ body {
     overflow: hidden;
     position: relative;
 }
-/* Screen edge cinematic fades */
 .gallery-section::before, .gallery-section::after {
     content: "";
     position: absolute;
@@ -557,7 +567,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    transform: rotate(-3deg) scale(1.05); /* AAA Angled Look */
+    transform: rotate(-3deg) scale(1.05);
     width: 100vw;
 }
 
@@ -569,7 +579,7 @@ body {
 }
 .gallery-row.reverse {
     animation-direction: reverse;
-    animation-duration: 40s; /* Slightly slower for parallax effect */
+    animation-duration: 40s;
 }
 .gallery-row:hover {
     animation-play-state: paused;
@@ -605,10 +615,8 @@ body {
 
 @keyframes scrollGallery {
     0%   { transform: translateX(0); }
-    /* Moves left exactly halfway so the duplicated set seamlessly loops */
     100% { transform: translateX(calc(-50% - 0.75rem)); } 
 }
-
 
 /* ═══════════════
    TECH
@@ -664,7 +672,9 @@ body {
    ═══════════════ */
 .cta-section { padding: 8rem 2rem; border-top: 1px solid rgba(255,255,255,.04); position: relative; overflow: hidden; }
 .cta-section::before { content: 'SURVIVE'; position: absolute; font-family: var(--font-d); font-size: clamp(10rem, 20vw, 20rem); color: rgba(240,90,26,.03); top: 50%; left: 50%; transform: translate(-50%,-50%); letter-spacing: .1em; pointer-events: none; white-space: nowrap; }
-.cta-inner { max-width: 580px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+
+/* WIDENED TO ALLOW NO-WRAP TO FIT */
+.cta-inner { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
 .cta-inner h2 { font-family: var(--font-d); font-size: clamp(3.2rem, 8vw, 6.5rem); letter-spacing: .02em; line-height: .95; margin-bottom: 1rem; }
 .cta-inner p { color: var(--gray-2); font-size: 1.05rem; margin-bottom: 2rem; }
 
@@ -703,7 +713,6 @@ footer p { font-family: var(--font-m); font-size: 13px; letter-spacing: .1em; co
     .advisors-row { font-size: 1.1rem; }
     .sc-card.sc-full .sc-levels { display: block; }
     .aaa-card::before { display: none; }
-    /* Simplify Gallery on Mobile */
     .gallery-img-wrap { width: 300px; height: 160px; }
     .gallery-track { transform: rotate(0) scale(1); }
 }

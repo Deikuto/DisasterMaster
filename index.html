@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disaster Master | The Game That Saves Lives</title>
     <!-- Favicon link -->
-    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/assets/dmlogo.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/dmlogo.ico">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -54,7 +55,7 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
     <div class="hero-bg" id="parallax-bg">
-        <img src="./assets/hero-bg-cinematic.jpg" alt="Cinematic Disaster Background" class="hero-bg-img" >
+        <img src="./assets/hero-bg-cinematic.jpg" alt="Cinematic Disaster Background" class="hero-bg-img">
         <div class="hero-overlay"></div>
         <div class="scan-lines"></div>
         <div class="particles" id="particles"></div>
@@ -69,7 +70,7 @@
             <span class="tl accent">MASTER</span>
         </h1>
         <p class="hero-tagline t" data-en="The game that saves lives." data-bg="Играта, която спасява животи.">The game that saves lives.</p>
-        <p class="hero-sub t" data-en="Theory is no longer boring. Step into the disaster — and survive it." data-bg="Теорията вече не е скучна. Влез в бедствието — и оцелей.">Theory is no longer boring. Step into the disaster — and survive it.</p>
+        <p class="hero-sub t no-wrap" data-en="Theory is no longer boring. Step into the disaster — and survive it." data-bg="Теорията вече не е скучна. Влез в бедствието — и оцелей.">Theory is no longer boring. Step into the disaster — and survive it.</p>
         <div class="hero-actions">
             
             <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="btn-primary aaa-btn btn-with-icon">
@@ -90,8 +91,9 @@
 <section id="problem" class="stats-section">
     <div class="section-intro">
         <span class="section-label t" data-en="The Problem" data-bg="Проблемът">The Problem</span>
-        <h2 class="t" data-en="Every year, disasters claim lives that could be saved." data-bg="Всяка година бедствията отнемат животи, които можеха да бъдат спасени.">Every year, disasters claim lives that could be saved.</h2>
-        <p class="t" data-en="The numbers are stark. And the root cause is almost always the same — lack of preparation." data-bg="Числата са ясни. А основната причина е почти винаги едно и също — липса на подготовка.">The numbers are stark. And the root cause is almost always the same — lack of preparation.</p>
+        <h2 class="t" data-en="Every year, disasters claim lives<br>that could be saved." data-bg="Всяка година бедствията отнемат животи, които можеха да бъдат спасени.">Every year, disasters claim lives<br>that could be saved.</h2>
+        <!-- NO-WRAP APPLIED HERE -->
+        <p class="t no-wrap" data-en="The numbers are stark. And the root cause is almost always the same — lack of preparation." data-bg="Числата са ясни. А основната причина е почти винаги едно и също — липса на подготовка.">The numbers are stark. And the root cause is almost always the same — lack of preparation.</p>
     </div>
 
     <div class="stats-grid">
@@ -140,7 +142,8 @@
 <section class="validation-section">
     <div class="val-inner">
         <span class="section-label t" data-en="Real-World Validation" data-bg="Реална Валидация">Real-World Validation</span>
-        <h2 class="t" data-en="We asked 50+ students. The results confirmed everything." data-bg="Анкетирахме 50+ ученици. Резултатите потвърдиха всичко.">We asked 50+ students. The results confirmed everything.</h2>
+        <!-- BR TAG ADDED TO FORCE NEW ROW -->
+        <h2 class="t" data-en="We asked 50+ students.<br>The results confirmed everything." data-bg="Анкетирахме 50+ ученици.<br>Резултатите потвърдиха всичко.">We asked 50+ students.<br>The results confirmed everything.</h2>
         
         <div class="val-stats">
             <div class="val-stat donut-wrapper">
@@ -178,8 +181,9 @@
 <section id="solution" class="solution-section">
     <div class="solution-intro">
         <span class="section-label t" data-en="The Solution" data-bg="Решението">The Solution</span>
-        <h2 class="t" data-en="Learn by doing — not by reading." data-bg="Учи чрез действие — не чрез четене.">Learn by doing — not by reading.</h2>
-        <p class="t" data-en="Disaster Master places you inside the emergency. Make split-second decisions. Face real consequences. Build instincts that last." data-bg="Дизастър Мастър те поставя вътре в извънредната ситуация. Взимай решения за секунди. Изправяй се пред реални последствия. Изгради инстинкти, които траят.">Disaster Master places you inside the emergency. Make split-second decisions. Face real consequences. Build instincts that last.</p>
+        <h2 class="t no-wrap" data-en="Learn by doing — not by reading." data-bg="Учи чрез действие — не чрез четене.">Learn by doing — not by reading.</h2>
+        <!-- BR TAG ADDED BEFORE "FACE REAL CONSEQUENCES" -->
+        <p class="t" data-en="Disaster Master places you inside the emergency. Make split-second decisions.<br>Face real consequences. Build instincts that last." data-bg="Дизастър Мастър те поставя вътре в извънредната ситуация. Взимай решения за секунди.<br>Изправяй се пред реални последствия. Изгради инстинкти, които траят.">Disaster Master places you inside the emergency. Make split-second decisions.<br>Face real consequences. Build instincts that last.</p>
     </div>
 
     <div class="pillars-grid">
@@ -208,25 +212,25 @@
     <!-- Screenshot strip -->
     <div class="screenshot-strip">
         <div class="ss-slide">
-            <img src="./assets/screenshot-earthquake.jpg" alt="Earthquake Scenario" >
+            <img src="./assets/screenshot-earthquake.jpg" alt="Earthquake Scenario">
             <div class="ss-label">
                 <span class="t" data-en="Earthquake" data-bg="Земетресение">Earthquake</span>
             </div>
         </div>
         <div class="ss-slide">
-            <img src="./assets/screenshot-fire.jpg" alt="Fire Scenario" >
+            <img src="./assets/screenshot-fire.jpg" alt="Fire Scenario">
             <div class="ss-label">
                 <span class="t" data-en="Fire" data-bg="Пожар">Fire</span>
             </div>
         </div>
         <div class="ss-slide">
-            <img src="./assets/screenshot-flood.jpg" alt="Flood Scenario" >
+            <img src="./assets/screenshot-flood.jpg" alt="Flood Scenario">
             <div class="ss-label">
                 <span class="t" data-en="Flood" data-bg="Наводнение">Flood</span>
             </div>
         </div>
         <div class="ss-slide">
-            <img src="./assets/screenshot-storm.jpg" alt="Thunderstorm Scenario" >
+            <img src="./assets/screenshot-storm.jpg" alt="Thunderstorm Scenario">
             <div class="ss-label">
                 <span class="t" data-en="Thunderstorm" data-bg="Гръмотевична Буря">Thunderstorm</span>
             </div>
@@ -238,7 +242,7 @@
 <section id="scenarios" class="scenarios-section">
     <div class="scenarios-header">
         <span class="section-label t" data-en="Survival Scenarios" data-bg="Сценарии за Оцеляване">Survival Scenarios</span>
-        <h2 class="t" data-en="7 levels. 4 disasters. 0 room for error." data-bg="7 нива. 4 бедствия. 0 право на грешка.">7 levels. 4 disasters. 0 room for error.</h2>
+        <h2 class="t no-wrap" data-en="7 levels. 4 disasters. 0 room for error." data-bg="7 нива. 4 бедствия. 0 право на грешка.">7 levels. 4 disasters. 0 room for error.</h2>
         <p class="t" data-en="Every level is grounded in official safety guidelines and validated by civil protection experts." data-bg="Всяко ниво е базирано на официални насоки за безопасност и валидирано от експерти по гражданска защита.">Every level is grounded in official safety guidelines and validated by civil protection experts.</p>
     </div>
 
@@ -468,33 +472,33 @@
         <!-- ROW 1 (Moves Left) -->
         <div class="gallery-row">
             <!-- Set 1 -->
-            <div class="gallery-img-wrap"><img src="./assets/gallery-1.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-2.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-3.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-4.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-5.jpg" alt="Game Screenshot" ></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-1.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-2.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-3.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-4.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-5.jpg" alt="Game Screenshot"></div>
             <!-- Set 1 Duplicated for Infinite Loop -->
-            <div class="gallery-img-wrap"><img src="./assets/gallery-1.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-2.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-3.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-4.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-5.jpg" alt="Game Screenshot" ></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-1.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-2.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-3.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-4.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-5.jpg" alt="Game Screenshot"></div>
         </div>
 
         <!-- ROW 2 (Moves Right) -->
         <div class="gallery-row reverse">
             <!-- Set 2 -->
-            <div class="gallery-img-wrap"><img src="./assets/gallery-6.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-7.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-8.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-9.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-10.jpg" alt="Game Screenshot" ></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-6.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-7.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-8.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-9.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-10.jpg" alt="Game Screenshot"></div>
             <!-- Set 2 Duplicated for Infinite Loop -->
-            <div class="gallery-img-wrap"><img src="./assets/gallery-6.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-7.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-8.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-9.jpg" alt="Game Screenshot" ></div>
-            <div class="gallery-img-wrap"><img src="./assets/gallery-10.jpg" alt="Game Screenshot" ></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-6.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-7.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-8.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-9.jpg" alt="Game Screenshot"></div>
+            <div class="gallery-img-wrap"><img src="./assets/gallery-10.jpg" alt="Game Screenshot"></div>
         </div>
     </div>
 </section>
@@ -504,22 +508,22 @@
     <span class="section-label t" data-en="Powered By" data-bg="Технологичен Стек">Powered By</span>
     <div class="tech-row">
         <div class="tech-item aaa-card">
-            <img src="./assets/logo-unity.png" alt="Unity" class="tech-logo" >
+            <img src="./assets/logo-unity.png" alt="Unity" class="tech-logo">
             <div class="tech-name">Unity</div>
             <div class="tech-desc t" data-en="Game Engine" data-bg="Игрови Двигател">Game Engine</div>
         </div>
         <div class="tech-item aaa-card">
-            <img src="./assets/logo-csharp.png" alt="C#" class="tech-logo" ">
+            <img src="./assets/logo-csharp.png" alt="C#" class="tech-logo">
             <div class="tech-name">C#</div>
             <div class="tech-desc t" data-en="All game logic" data-bg="Цялата програмна логика">All game logic</div>
         </div>
         <div class="tech-item aaa-card">
-            <img src="./assets/logo-blender.png" alt="Blender" class="tech-logo" >
+            <img src="./assets/logo-blender.png" alt="Blender" class="tech-logo">
             <div class="tech-name">Blender</div>
             <div class="tech-desc t" data-en="3D Models & Animation" data-bg="3D Модели и Анимация">3D Models & Animation</div>
         </div>
         <div class="tech-item aaa-card">
-            <img src="./assets/logo-visualstudio.png" alt="Visual Studio" class="tech-logo" >
+            <img src="./assets/logo-visualstudio.png" alt="Visual Studio" class="tech-logo">
             <div class="tech-name">Visual Studio</div>
             <div class="tech-desc t" data-en="IDE & Debugging" data-bg="Среда за разработка и отстраняване на грешки">IDE & Debugging</div>
         </div>
@@ -567,7 +571,7 @@
     <div class="team-grid">
         <div class="team-card">
             <div class="team-photo aaa-img">
-                <img src="./assets/photo-vlad.jpg" alt="Vladimir Toshev" >
+                <img src="./assets/photo-vlad.jpg" alt="Vladimir Toshev">
                 <div class="team-initials">VT</div>
             </div>
             <h3>Vladimir Toshev</h3>
@@ -575,7 +579,7 @@
         </div>
         <div class="team-card">
             <div class="team-photo aaa-img">
-                <img src="./assets/photo-deyan.jpg" alt="Deyan Atanasov" >
+                <img src="./assets/photo-deyan.jpg" alt="Deyan Atanasov">
                 <div class="team-initials">DA</div>
             </div>
             <h3>Deyan Atanasov</h3>
@@ -602,7 +606,8 @@
 <section class="cta-section">
     <div class="cta-inner">
         <h2 class="t" data-en="Ready to survive?" data-bg="Готов ли си да оцелееш?">Ready to survive?</h2>
-        <p class="t" data-en="Free to download. Runs on Windows. No installation required. Just unzip and play." data-bg="Безплатно за изтегляне. Работи на Windows. Не изисква инсталация. Просто разархивирай и играй.">Free to download. Runs on Windows. No installation required. Just unzip and play.</p>
+        <!-- NO-WRAP APPLIED HERE TO KEEP IT ALL ON ONE LINE -->
+        <p class="t no-wrap" data-en="Free to download. Runs on Windows. No installation required. Just unzip and play." data-bg="Безплатно за изтегляне. Работи на Windows. Не изисква инсталация. Просто разархивирай и играй.">Free to download. Runs on Windows. No installation required. Just unzip and play.</p>
         
         <a href="https://deikuto.itch.io/disastermaster" target="_blank" class="btn-primary large aaa-btn btn-with-icon">
             <img src="./assets/logo-itchio.png" alt="Itch.io" class="btn-icon">
@@ -620,7 +625,8 @@
                 Instagram
             </a>
         </div>
-        <p class="cta-note t" data-en="Free forever. Built to protect, not to profit." data-bg="Безплатно завинаги. Изградено за защита, не за печалба.">Free forever. Built to protect, not to profit.</p>
+        <!-- NO-WRAP APPLIED HERE TO KEEP IT ALL ON ONE LINE -->
+        <p class="cta-note t no-wrap" data-en="Free forever. Built to protect, not to profit." data-bg="Безплатно завинаги. Изградено за защита, не за печалба.">Free forever. Built to protect, not to profit.</p>
     </div>
 </section>
 
