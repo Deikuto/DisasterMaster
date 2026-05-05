@@ -99,6 +99,24 @@ mobileNav.querySelectorAll('a').forEach(a => {
     cards.forEach(c => obs.observe(c));
 })();
 
+// ── Animated Donut Charts ─────────────────────────────────────
+(function initDonutCharts() {
+    const donuts = document.querySelectorAll('.donut-fill');
+    
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const targetVal = e.target.getAttribute('data-target');
+                // Animate stroke dasharray to "fill" the pie chart
+                e.target.style.strokeDasharray = `${targetVal}, 100`;
+                obs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    donuts.forEach(d => obs.observe(d));
+})();
+
 // ── Smooth scroll for nav anchors ─────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {

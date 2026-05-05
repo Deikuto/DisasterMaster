@@ -105,6 +105,14 @@ body {
 }
 .btn-ghost:hover { border-color: var(--light); }
 
+/* Added helper class for buttons with icons to center them perfectly */
+.btn-with-icon, .nav-cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
 /* AAA Hover Glow on Cards */
 .aaa-card {
     position: relative;
@@ -177,7 +185,7 @@ body {
     gap: 1.6rem;
     margin-left: auto;
 }
-.nav-links a {
+.nav-links a:not(.nav-cta) {
     font-family: var(--font-m);
     font-size: 13px; /* Enlarged */
     letter-spacing: .1em;
@@ -193,7 +201,11 @@ body {
     color: var(--dark) !important;
     padding: .45rem 1.2rem !important;
     border-radius: 3px;
+    font-family: var(--font-m);
+    font-size: 13px;
+    text-transform: uppercase;
     font-weight: 700;
+    text-decoration: none;
 }
 .nav-cta:hover { background: var(--orange-2) !important; color: var(--dark) !important; }
 
@@ -472,7 +484,7 @@ body {
 .problem-card p { font-size: 1rem; color: var(--gray-2); line-height: 1.65; }
 
 /* ═══════════════
-   VALIDATION
+   VALIDATION (ANIMATED DONUT CHARTS)
    ═══════════════ */
 .validation-section {
     padding: 6rem 2rem;
@@ -488,28 +500,72 @@ body {
     font-family: var(--font-d);
     font-size: clamp(2rem, 4vw, 3.2rem);
     letter-spacing: .02em;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .val-stats {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 4rem;
     flex-wrap: wrap;
-    margin-bottom: 3.5rem;
+    margin-bottom: 4.5rem;
 }
-.val-stat { text-align: center; }
-.val-num {
+
+/* Donut Chart CSS */
+.donut-wrapper {
+    position: relative;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.donut-chart {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+    overflow: visible;
+}
+.donut-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 2.5;
+}
+.donut-fill {
+    fill: none;
+    stroke: var(--orange);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    /* This creates the glow effect */
+    filter: drop-shadow(0 0 6px rgba(240,90,26,0.6));
+    /* Transition added for JS observer */
+    transition: stroke-dasharray 2s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.donut-content {
+    position: absolute;
+    top: 70px; /* Half of 140px */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.donut-content .val-num {
     font-family: var(--font-d);
-    font-size: clamp(4.5rem, 10vw, 6.5rem);
+    font-size: 3.5rem;
     line-height: 1;
-    color: var(--orange);
+    color: var(--light);
     letter-spacing: -.02em;
 }
-.val-num span { font-size: .6em; }
-.val-stat p { font-size: 1.05rem; color: var(--gray-2); max-width: 220px; margin: .5rem auto 0; }
-.val-divider { width: 1px; height: 80px; background: rgba(255,255,255,.08); flex-shrink: 0; }
+.donut-content span { font-size: .5em; color: var(--orange); }
+
+.donut-wrapper p { 
+    font-size: 1.05rem; 
+    color: var(--gray-2); 
+    max-width: 220px; 
+    margin: 0;
+    line-height: 1.5;
+}
+.val-divider { width: 1px; height: 100px; background: rgba(255,255,255,.08); flex-shrink: 0; }
 
 .expert-validation-block {
     border: 1px solid rgba(255,255,255,.07);
@@ -1129,7 +1185,7 @@ footer p {
     .ss-slide { min-height: 200px; }
     .hero-title { font-size: 5rem; }
     .val-divider { display: none; }
-    .val-stats { gap: 2rem; }
+    .val-stats { gap: 2.5rem; }
     .footer-inner { text-align: center; flex-direction: column; align-items: center; }
     .footer-links { justify-content: center; }
     .team-grid { gap: 2.5rem; }
@@ -1142,5 +1198,5 @@ footer p {
     .hero-eyebrow { font-size: 10px; }
     .hero-title { font-size: 4rem; }
     .hero-actions { flex-direction: column; }
-    .btn-primary, .btn-ghost { width: 100%; text-align: center; }
+    .btn-primary, .btn-ghost { width: 100%; text-align: center; justify-content: center; }
 }
