@@ -107,7 +107,6 @@ mobileNav.querySelectorAll('a').forEach(a => {
         entries.forEach(e => {
             if (e.isIntersecting) {
                 const targetVal = e.target.getAttribute('data-target');
-                // Animate stroke dasharray to "fill" the pie chart
                 e.target.style.strokeDasharray = `${targetVal}, 100`;
                 obs.unobserve(e.target);
             }
