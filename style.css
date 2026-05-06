@@ -410,8 +410,16 @@ body {
    ═══════════════ */
 .stats-section { padding: 7rem 2rem; background: var(--dark-2); border-top: 1px solid rgba(255,255,255,.04); }
 
-/* WIDENED TO ALLOW NO-WRAP TO FIT */
-.section-intro { max-width: 1000px; margin: 0 auto 4.5rem; text-align: center; }
+/* WIDENED & FLEX-CENTERED TO ALLOW NO-WRAP TO FIT */
+.section-intro { 
+    width: 100%; 
+    max-width: 1000px; 
+    margin: 0 auto 4.5rem; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
 .section-intro h2 { font-family: var(--font-d); font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.05; letter-spacing: .02em; margin-bottom: 1rem; }
 .section-intro p { color: var(--gray-2); font-size: 1.05rem; }
 
@@ -433,7 +441,6 @@ body {
    ═══════════════ */
 .validation-section { padding: 6rem 2rem; border-top: 1px solid rgba(255,255,255,.04); border-bottom: 1px solid rgba(255,255,255,.04); }
 
-/* WIDENED TO ALLOW BR TO FIT PROPERLY */
 .val-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
 .val-inner h2 { font-family: var(--font-d); font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: .02em; margin-bottom: 4rem; }
 .val-stats { display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-bottom: 4.5rem; }
@@ -457,7 +464,15 @@ body {
    SOLUTION
    ═══════════════ */
 .solution-section { padding: 7rem 2rem; max-width: 1280px; margin: 0 auto; }
-.solution-intro { max-width: 900px; margin: 0 auto 5rem; text-align: center; }
+.solution-intro { 
+    width: 100%; 
+    max-width: 1000px;
+    margin: 0 auto 5rem; 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .solution-intro h2 { font-family: var(--font-d); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; letter-spacing: .02em; margin-bottom: 1rem; }
 .solution-intro p { color: var(--gray-2); font-size: 1.05rem; }
 
@@ -477,7 +492,15 @@ body {
    SCENARIOS
    ═══════════════ */
 .scenarios-section { padding: 7rem 2rem; background: var(--dark-2); border-top: 1px solid rgba(255,255,255,.04); }
-.scenarios-header { max-width: 850px; margin: 0 auto 4.5rem; text-align: center; }
+.scenarios-header { 
+    width: 100%; 
+    max-width: 1000px;
+    margin: 0 auto 4.5rem; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
 .scenarios-header h2 { font-family: var(--font-d); font-size: clamp(2.2rem, 4vw, 3.4rem); letter-spacing: .02em; margin-bottom: 1rem; }
 .scenarios-header p { color: var(--gray-2); font-size: 1.05rem; }
 
@@ -673,8 +696,18 @@ body {
 .cta-section { padding: 8rem 2rem; border-top: 1px solid rgba(255,255,255,.04); position: relative; overflow: hidden; }
 .cta-section::before { content: 'SURVIVE'; position: absolute; font-family: var(--font-d); font-size: clamp(10rem, 20vw, 20rem); color: rgba(240,90,26,.03); top: 50%; left: 50%; transform: translate(-50%,-50%); letter-spacing: .1em; pointer-events: none; white-space: nowrap; }
 
-/* WIDENED TO ALLOW NO-WRAP TO FIT */
-.cta-inner { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+/* WIDENED & FLEX-CENTERED TO ALLOW NO-WRAP TO FIT */
+.cta-inner { 
+    width: 100%; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    text-align: center; 
+    position: relative; 
+    z-index: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
 .cta-inner h2 { font-family: var(--font-d); font-size: clamp(3.2rem, 8vw, 6.5rem); letter-spacing: .02em; line-height: .95; margin-bottom: 1rem; }
 .cta-inner p { color: var(--gray-2); font-size: 1.05rem; margin-bottom: 2rem; }
 
